@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria</title>
+    <link rel="stylesheet" href="./src/login/login.css">
+</head>
+<body>
+
+    <div class="login-page">
+
+        <div class="login-visual">
+            <div class="visual-content">
+                <span class="eyebrow">AURISTICA LIVRARIA</span>
+                <h1>Histórias para<br>ficar por perto.</h1>
+                <p>
+                    Encontre livros que combinam com você,
+                    descubra novos mundos e monte sua próxima leitura.
+                </p>
+            </div>
+        </div>
+
+        <div class="login-area">
+
+            <div class="login-box">
+
+                <div class="login-heading">
+                    <span>ENTRAR</span>
+                    <h2>Bem-vindo.</h2>
+                    <p>Entre na sua conta para continuar.</p>
+                </div>
+
+                <form onsubmit="entrar(event)">
+
+                    <div class="field">
+                        <label for="usuario">Nome de usuário</label>
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit">Entrar</button>
+
+                </form>
+
+                <div class="login-footer">
+                    Ainda não possui uma conta?
+                    <a href="./src/login/register.html">Criar conta</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function entrar(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("usuario").value.trim();
+
+            if (!usuario) {
+                return;
+            }
+
+            localStorage.setItem("usuario", usuario);
+
+            window.location.href = "./src/home/home.html";
+        }
+    </script>
+
+</body>
+</html>

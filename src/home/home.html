@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Livraria</title>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="home.html" class="logo-link">
+            <img
+                class="logo"
+                src="../img/logoauristicatrue.png"
+                alt="Livraria"
+            >
+        </a>
+
+        <nav class="navigation">
+
+            <a href="home.html" class="active">
+                Início
+            </a>
+
+            <a href="#catalogo">
+                Catálogo
+            </a>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+            <a href="#contato">
+                Contato
+            </a>
+
+        </nav>
+
+        <div class="search">
+            <input
+                type="search"
+                placeholder="Pesquisar livros..."
+            >
+        </div>
+
+        <div class="user">
+
+            <img
+                src="../img/Userbeta.png"
+                alt="Usuário"
+            >
+
+            <span id="username">
+                Olá, visitante
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <img
+                class="hero-image"
+                src="../img/banner2.jpg "
+                alt="Livros"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    LIVRARIA
+                </span>
+
+                <h1>
+                    Histórias que
+                    <span>merecem ser lidas.</span>
+                </h1>
+
+                <p>
+                    Descubra novos mundos, personagens e histórias
+                    através de uma seleção feita para quem realmente
+                    gosta de ler.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#catalogo" class="hero-button">
+                        Explorar livros
+                    </a>
+
+                    <a href="#sobre" class="hero-link">
+                        Conheça a livraria →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-note">
+
+                <span>01</span>
+
+                <p>
+                    Sua próxima história
+                    pode estar aqui.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="catalog" id="catalogo">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DESTAQUES
+                    </span>
+
+                    <h2>
+                        Encontre seu próximo livro.
+                    </h2>
+
+                </div>
+
+                <p>
+                    Histórias escolhidas para acompanhar
+                    diferentes momentos e gostos.
+                </p>
+
+            </div>
+
+
+            <div class="books">
+
+                <article
+                    class="book"
+                    onclick="window.location.href='../product/livro.html'"
+                >
+
+                    <div class="book-image">
+
+                        <span class="book-number">
+                            01
+                        </span>
+
+                        <img
+                            src="../img/capa.jpeg"
+                            alt="Capa de Sousou no Frieren"
+                        >
+
+                    </div>
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            Fantasia
+                        </span>
+
+                        <h3>
+                            Sousou no Frieren
+                        </h3>
+
+                        <p class="author">
+                            Kanehito Yamada
+                        </p>
+
+                        <div class="book-bottom">
+
+                            <strong>
+                                R$ 45,90
+                            </strong>
+
+                            <span class="book-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="book"
+                    onclick="window.location.href='../product/livro.html'"
+                >
+
+                    <div class="book-image">
+
+                        <span class="book-number">
+                            02
+                        </span>
+
+                        <img
+                            src="../img/capa.jpeg"
+                            alt="Capa de Sousou no Frieren"
+                        >
+
+                    </div>
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            Fantasia
+                        </span>
+
+                        <h3>
+                            Sousou no Frieren
+                        </h3>
+
+                        <p class="author">
+                            Kanehito Yamada
+                        </p>
+
+                        <div class="book-bottom">
+
+                            <strong>
+                                R$ 45,90
+                            </strong>
+
+                            <span class="book-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="book"
+                    onclick="window.location.href='../product/livro.html'"
+                >
+
+                    <div class="book-image">
+
+                        <span class="book-number">
+                            03
+                        </span>
+
+                        <img
+                            src="../img/capa.jpeg"
+                            alt="Capa de Sousou no Frieren"
+                        >
+
+                    </div>
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            Fantasia
+                        </span>
+
+                        <h3>
+                            Sousou no Frieren
+                        </h3>
+
+                        <p class="author">
+                            Kanehito Yamada
+                        </p>
+
+                        <div class="book-bottom">
+
+                            <strong>
+                                R$ 45,90
+                            </strong>
+
+                            <span class="book-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="book"
+                    onclick="window.location.href='../product/livro.html'"
+                >
+
+                    <div class="book-image">
+
+                        <span class="book-number">
+                            04
+                        </span>
+
+                        <img
+                            src="../img/capa.jpeg"
+                            alt="Capa de Sousou no Frieren"
+                        >
+
+                    </div>
+
+                    <div class="book-info">
+
+                        <span class="book-category">
+                            Fantasia
+                        </span>
+
+                        <h3>
+                            Sousou no Frieren
+                        </h3>
+
+                        <p class="author">
+                            Kanehito Yamada
+                        </p>
+
+                        <div class="book-bottom">
+
+                            <strong>
+                                R$ 45,90
+                            </strong>
+
+                            <span class="book-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="about" id="sobre">
+
+            <div class="about-image">
+
+                <img
+                    src="../img/banner.jpg"
+                    alt="Livros da livraria"
+                >
+
+                <div class="about-stamp">
+                    <span>BOOKS</span>
+                    <strong>+</strong>
+                    <span>STORIES</span>
+                </div>
+
+            </div>
+
+            <div class="about-content">
+
+                <span class="eyebrow">
+                    SOBRE NÓS
+                </span>
+
+                <h2>
+                    Um lugar para
+                    <span>quem gosta de histórias.</span>
+                </h2>
+
+                <p>
+                    A nossa livraria nasceu da ideia de criar um espaço
+                    simples e agradável para descobrir novos livros.
+                </p>
+
+                <p>
+                    Reunimos diferentes gêneros e autores para que cada
+                    pessoa possa encontrar uma história que combine com
+                    seu momento.
+                </p>
+
+                <a href="#contato" class="about-link">
+                    Fale conosco →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact" id="contato">
+
+            <div class="contact-heading">
+
+                <span class="eyebrow">
+                    CONTATO
+                </span>
+
+                <h2>
+                    Tem algo para nos contar?
+                </h2>
+
+                <p>
+                    Dúvidas, sugestões ou alguma pergunta sobre nossos
+                    livros? Mande uma mensagem.
+                </p>
+
+                <div class="contact-detail">
+
+                    <span>01</span>
+
+                    <p>
+                        Responderemos assim que possível.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Seu nome"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="field">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="seuemail@email.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="assunto">
+                        Assunto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="assunto"
+                        placeholder="Assunto da mensagem"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="mensagem">
+                        Mensagem
+                    </label>
+
+                    <textarea
+                        id="mensagem"
+                        placeholder="Escreva sua mensagem..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    Enviar mensagem
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <img
+                    src="../img/logoauristicatrue.png"
+                    alt="Livraria"
+                >
+
+                <p>
+                    Histórias para todos os capítulos.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#catalogo">
+                    Catálogo
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#contato">
+                    Contato
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Livraria
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        const usuario = localStorage.getItem('usuario');
+
+        const username = document.getElementById('username');
+
+        if (usuario) {
+            username.textContent = `Olá, ${usuario}`;
+        }
+
+        const formulario = document.querySelector('.contact-form');
+
+        formulario.addEventListener('submit', function(event) {
+
+            event.preventDefault();
+
+            alert('Mensagem enviada com sucesso!');
+
+            formulario.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

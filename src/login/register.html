@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta — Livraria</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+
+    <div class="login-page">
+
+        <div class="login-visual">
+            <div class="visual-content">
+                <span class="eyebrow">AURISTICA LIVRARIA</span>
+                <h1>Seu próximo<br>capítulo começa aqui.</h1>
+                <p>
+                    Crie sua conta e tenha um espaço para descobrir,
+                    escolher e acompanhar suas próximas leituras.
+                </p>
+            </div>
+        </div>
+
+        <div class="login-area">
+
+            <div class="login-box">
+
+                <div class="login-heading">
+                    <span>NOVA CONTA</span>
+                    <h2>Cadastre-se.</h2>
+                    <p>Preencha seus dados para começar.</p>
+                </div>
+
+                <form onsubmit="cadastrar(event)">
+
+                    <div class="field">
+                        <label for="usuario">Nome de usuário</label>
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Como podemos te chamar?"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Crie uma senha"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="confirmar">Confirmar senha</label>
+                        <input
+                            type="password"
+                            id="confirmar"
+                            placeholder="Digite a senha novamente"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit">Criar conta</button>
+
+                </form>
+
+                <div class="login-footer">
+                    Já possui uma conta?
+                    <a href="../../index.html">Entrar</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function cadastrar(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("usuario").value.trim();
+            const senha = document.getElementById("senha").value;
+            const confirmar = document.getElementById("confirmar").value;
+
+            if (senha !== confirmar) {
+                alert("As senhas não são iguais.");
+                return;
+            }
+
+            localStorage.setItem("usuario", usuario);
+
+            window.location.href = "../home/home.html";
+        }
+    </script>
+
+</body>
+</html>

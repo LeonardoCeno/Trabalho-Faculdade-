@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sousou no Frieren | Livraria</title>
+
+    <link rel="stylesheet" href="./livro.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <img
+                class="logo"
+                src="../img/logoauristicatrue.png"
+                alt="Livraria"
+                onclick="window.location.href='../home/home.html'"
+            >
+
+            <nav class="navigation">
+
+                <a href="../home/home.html">
+                    Início
+                </a>
+
+                <a href="../home/home.html#catalogo">
+                    Catálogo
+                </a>
+
+            </nav>
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar livros..."
+                >
+
+            </div>
+
+            <div class="user-area">
+
+                <div class="user">
+
+                    <img
+                        src="../img/Userbeta.png"
+                        alt="Usuário"
+                    >
+
+                </div>
+
+                <span id="username">
+                    Olá, usuário
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <div class="breadcrumb">
+
+            <a href="../home/home.html">
+                Início
+            </a>
+
+            <span>/</span>
+
+            <span>Livro</span>
+
+        </div>
+
+
+        <section class="product">
+
+            <div class="product-image">
+
+                <div class="image-background">
+
+                    <img
+                        src="../img/capa.jpeg"
+                        alt="Capa de Sousou no Frieren"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <span class="category">
+                    FANTASIA
+                </span>
+
+                <h1>
+                    Sousou no Frieren
+                </h1>
+
+                <p class="author">
+                    Kanehito Yamada
+                </p>
+
+                <div class="line"></div>
+
+                <p class="description">
+                    Uma história sobre o que permanece depois
+                    que uma grande aventura chega ao fim. Frieren,
+                    uma elfa maga que possui uma vida muito longa,
+                    começa a compreender melhor as pessoas e os
+                    momentos que compartilhou durante sua jornada.
+                </p>
+
+                <div class="details">
+
+                    <div>
+                        <span>FORMATO</span>
+                        <strong>Físico</strong>
+                    </div>
+
+                    <div>
+                        <span>IDIOMA</span>
+                        <strong>Português</strong>
+                    </div>
+
+                    <div>
+                        <span>EDIÇÃO</span>
+                        <strong>1ª edição</strong>
+                    </div>
+
+                </div>
+
+                <div class="purchase">
+
+                    <div class="price">
+
+                        <span>
+                            POR APENAS
+                        </span>
+
+                        <strong>
+                            R$ 45,90
+                        </strong>
+
+                    </div>
+
+                    <button>
+                        Adicionar ao carrinho
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <img
+            src="../img/logoauristicatrue.png"
+            alt="Livraria"
+        >
+
+        <p>
+            &copy; 2026 Livraria. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <script>
+        const usuario = localStorage.getItem('usuario');
+
+        if (usuario) {
+            document.getElementById('username').textContent =
+                `Olá, ${usuario}`;
+        }
+    </script>
+
+</body>
+
+</html>
