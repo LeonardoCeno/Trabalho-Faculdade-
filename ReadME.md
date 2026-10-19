@@ -48,7 +48,7 @@ O projeto também possui uma área institucional com informações sobre a livra
 
 ## Acessibilidade
 
-- Barra de acessibilidade em todas as páginas: aumentar/diminuir texto e alto contraste (preferências salvas)
+- Barra de acessibilidade em todas as páginas: aumentar/diminuir o tamanho do texto (preferência salva)
 - Link "Pular para o conteúdo" para quem navega pelo teclado
 - Foco visível em links, botões e campos
 - Cards de livros como links, acessíveis pelo teclado

@@ -149,54 +149,6 @@ textarea:focus-visible,
     background: #a8dfe2;
 }
 
-.a11y-barra button[aria-pressed="true"] {
-    background: #a8dfe2;
-}
-
-/* ALTO CONTRASTE */
-html.alto-contraste body,
-html.alto-contraste body *:not(img) {
-    background: #000 !important;
-    color: #fff !important;
-    border-color: #fff !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-}
-
-html.alto-contraste body a,
-html.alto-contraste body a * {
-    color: #ff0 !important;
-    text-decoration: underline !important;
-}
-
-html.alto-contraste body .a11y-barra button[aria-pressed="true"] {
-    background: #ff0 !important;
-    color: #000 !important;
-}
-
-html.alto-contraste button,
-html.alto-contraste input,
-html.alto-contraste select,
-html.alto-contraste textarea {
-    border: 2px solid #fff !important;
-}
-
-html.alto-contraste input::placeholder,
-html.alto-contraste textarea::placeholder {
-    color: #ccc !important;
-}
-
-html.alto-contraste .hero-overlay,
-html.alto-contraste .about-image::after,
-html.alto-contraste .login-visual::before,
-html.alto-contraste .login-visual::after {
-    display: none;
-}
-
-html.alto-contraste .erro {
-    color: #ff6b6b !important;
-}
-
 /* MENOS ANIMAÇÕES */
 @media (prefers-reduced-motion: reduce) {
     *,

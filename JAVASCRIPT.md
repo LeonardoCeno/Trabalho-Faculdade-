@@ -30,7 +30,7 @@ Continua sem enviar para lugar nenhum (não temos servidor), mas agora ele verif
 
 ## Acessibilidade
 
-Essa parte foi a que mais mexeu nas páginas. Em todas elas aparece uma barrinha no canto inferior direito com quatro botões: diminuir o texto, voltar ao tamanho normal, aumentar o texto e ligar o alto contraste (fundo preto, texto branco e links em amarelo). O que a pessoa escolhe fica salvo, então continua igual quando ela troca de página.
+Essa parte foi a que mais mexeu nas páginas. Em todas elas aparece uma barrinha no canto inferior direito com três botões: diminuir o texto, voltar ao tamanho normal e aumentar o texto. O tamanho escolhido fica salvo, então continua igual quando a pessoa troca de página.
 
 Além disso:
 
@@ -55,6 +55,6 @@ As senhas também ficam salvas ali sem nenhuma proteção. Para um trabalho de f
 | `catalogo.js` | monta os cards da página inicial, a pesquisa e o formulário de contato |
 | `livro.js` | preenche a página de um livro |
 | `cadastro-livro.js` | formulário de novos livros |
-| `acessibilidade.js` | barra de tamanho de texto e contraste |
+| `acessibilidade.js` | barra de tamanho do texto |
 
-Junto com isso foi criado o `src/css/acessibilidade.css`, com os estilos da barra, do alto contraste e das mensagens de erro.
+Junto com isso foi criado o `src/css/acessibilidade.css`, com os estilos da barra e das mensagens de erro.
