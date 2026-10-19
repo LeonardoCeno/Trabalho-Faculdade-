@@ -11,11 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
 
-    <title>Livraria</title>
+    <title>Início — Livraria</title>
 </head>
 
 <body>
+
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
 
     <header class="header">
 
@@ -23,18 +26,22 @@
             <img
                 class="logo"
                 src="../img/logoauristicatrue.png"
-                alt="Livraria"
+                alt="Auristica Livraria — página inicial"
             >
         </a>
 
-        <nav class="navigation">
+        <nav class="navigation" aria-label="Navegação principal">
 
-            <a href="home.html" class="active">
+            <a href="home.html" class="active" aria-current="page">
                 Início
             </a>
 
             <a href="#catalogo">
                 Catálogo
+            </a>
+
+            <a href="../product/novo-livro.html">
+                Cadastrar livro
             </a>
 
             <a href="#sobre">
@@ -47,37 +54,43 @@
 
         </nav>
 
-        <div class="search">
+        <form class="search" role="search" onsubmit="event.preventDefault()">
+            <label for="busca" class="sr-only">Pesquisar livros</label>
             <input
                 type="search"
+                id="busca"
                 placeholder="Pesquisar livros..."
             >
-        </div>
+        </form>
 
         <div class="user">
 
             <img
                 src="../img/Userbeta.png"
-                alt="Usuário"
+                alt=""
             >
 
             <span id="username">
                 Olá, visitante
             </span>
 
+            <button type="button" id="sair" class="logout" hidden>
+                Sair
+            </button>
+
         </div>
 
     </header>
 
 
-    <main>
+    <main id="conteudo">
 
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-titulo">
 
             <img
                 class="hero-image"
-                src="../img/banner2.jpg "
-                alt="Livros"
+                src="../img/banner2.jpg"
+                alt=""
             >
 
             <div class="hero-overlay"></div>
@@ -88,7 +101,7 @@
                     LIVRARIA
                 </span>
 
-                <h1>
+                <h1 id="hero-titulo">
                     Histórias que
                     <span>merecem ser lidas.</span>
                 </h1>
@@ -106,14 +119,14 @@
                     </a>
 
                     <a href="#sobre" class="hero-link">
-                        Conheça a livraria →
+                        Conheça a livraria <span aria-hidden="true">→</span>
                     </a>
 
                 </div>
 
             </div>
 
-            <div class="hero-note">
+            <div class="hero-note" aria-hidden="true">
 
                 <span>01</span>
 
@@ -127,7 +140,7 @@
         </section>
 
 
-        <section class="catalog" id="catalogo">
+        <section class="catalog" id="catalogo" aria-labelledby="catalogo-titulo">
 
             <div class="section-heading">
 
@@ -137,7 +150,7 @@
                         DESTAQUES
                     </span>
 
-                    <h2>
+                    <h2 id="catalogo-titulo">
                         Encontre seu próximo livro.
                     </h2>
 
@@ -146,223 +159,30 @@
                 <p>
                     Histórias escolhidas para acompanhar
                     diferentes momentos e gostos.
+                    <a href="../product/novo-livro.html" class="catalog-add">
+                        + Cadastrar novo livro
+                    </a>
                 </p>
 
             </div>
 
+            <p class="catalog-status" id="catalogo-status" aria-live="polite"></p>
 
-            <div class="books">
-
-                <article
-                    class="book"
-                    onclick="window.location.href='../product/livro.html'"
-                >
-
-                    <div class="book-image">
-
-                        <span class="book-number">
-                            01
-                        </span>
-
-                        <img
-                            src="../img/capa.jpeg"
-                            alt="Capa de Sousou no Frieren"
-                        >
-
-                    </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">
-                            Fantasia
-                        </span>
-
-                        <h3>
-                            Sousou no Frieren
-                        </h3>
-
-                        <p class="author">
-                            Kanehito Yamada
-                        </p>
-
-                        <div class="book-bottom">
-
-                            <strong>
-                                R$ 45,90
-                            </strong>
-
-                            <span class="book-arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="book"
-                    onclick="window.location.href='../product/livro.html'"
-                >
-
-                    <div class="book-image">
-
-                        <span class="book-number">
-                            02
-                        </span>
-
-                        <img
-                            src="../img/capa.jpeg"
-                            alt="Capa de Sousou no Frieren"
-                        >
-
-                    </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">
-                            Fantasia
-                        </span>
-
-                        <h3>
-                            Sousou no Frieren
-                        </h3>
-
-                        <p class="author">
-                            Kanehito Yamada
-                        </p>
-
-                        <div class="book-bottom">
-
-                            <strong>
-                                R$ 45,90
-                            </strong>
-
-                            <span class="book-arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="book"
-                    onclick="window.location.href='../product/livro.html'"
-                >
-
-                    <div class="book-image">
-
-                        <span class="book-number">
-                            03
-                        </span>
-
-                        <img
-                            src="../img/capa.jpeg"
-                            alt="Capa de Sousou no Frieren"
-                        >
-
-                    </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">
-                            Fantasia
-                        </span>
-
-                        <h3>
-                            Sousou no Frieren
-                        </h3>
-
-                        <p class="author">
-                            Kanehito Yamada
-                        </p>
-
-                        <div class="book-bottom">
-
-                            <strong>
-                                R$ 45,90
-                            </strong>
-
-                            <span class="book-arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="book"
-                    onclick="window.location.href='../product/livro.html'"
-                >
-
-                    <div class="book-image">
-
-                        <span class="book-number">
-                            04
-                        </span>
-
-                        <img
-                            src="../img/capa.jpeg"
-                            alt="Capa de Sousou no Frieren"
-                        >
-
-                    </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">
-                            Fantasia
-                        </span>
-
-                        <h3>
-                            Sousou no Frieren
-                        </h3>
-
-                        <p class="author">
-                            Kanehito Yamada
-                        </p>
-
-                        <div class="book-bottom">
-
-                            <strong>
-                                R$ 45,90
-                            </strong>
-
-                            <span class="book-arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
+            <div class="books" id="lista-livros"></div>
 
         </section>
 
 
-        <section class="about" id="sobre">
+        <section class="about" id="sobre" aria-labelledby="sobre-titulo">
 
             <div class="about-image">
 
                 <img
                     src="../img/banner.jpg"
-                    alt="Livros da livraria"
+                    alt="Estantes com livros da livraria"
                 >
 
-                <div class="about-stamp">
+                <div class="about-stamp" aria-hidden="true">
                     <span>BOOKS</span>
                     <strong>+</strong>
                     <span>STORIES</span>
@@ -376,7 +196,7 @@
                     SOBRE NÓS
                 </span>
 
-                <h2>
+                <h2 id="sobre-titulo">
                     Um lugar para
                     <span>quem gosta de histórias.</span>
                 </h2>
@@ -393,7 +213,7 @@
                 </p>
 
                 <a href="#contato" class="about-link">
-                    Fale conosco →
+                    Fale conosco <span aria-hidden="true">→</span>
                 </a>
 
             </div>
@@ -401,7 +221,7 @@
         </section>
 
 
-        <section class="contact" id="contato">
+        <section class="contact" id="contato" aria-labelledby="contato-titulo">
 
             <div class="contact-heading">
 
@@ -409,7 +229,7 @@
                     CONTATO
                 </span>
 
-                <h2>
+                <h2 id="contato-titulo">
                     Tem algo para nos contar?
                 </h2>
 
@@ -420,7 +240,7 @@
 
                 <div class="contact-detail">
 
-                    <span>01</span>
+                    <span aria-hidden="true">01</span>
 
                     <p>
                         Responderemos assim que possível.
@@ -431,7 +251,9 @@
             </div>
 
 
-            <form class="contact-form">
+            <form class="contact-form" id="form-contato" novalidate>
+
+                <p class="mensagem-sucesso" id="contato-sucesso" role="status"></p>
 
                 <div class="form-row">
 
@@ -445,8 +267,12 @@
                             type="text"
                             id="nome"
                             placeholder="Seu nome"
+                            autocomplete="name"
+                            aria-describedby="nome-erro"
                             required
                         >
+
+                        <span class="erro" id="nome-erro"></span>
 
                     </div>
 
@@ -460,8 +286,12 @@
                             type="email"
                             id="email"
                             placeholder="seuemail@email.com"
+                            autocomplete="email"
+                            aria-describedby="email-erro"
                             required
                         >
+
+                        <span class="erro" id="email-erro"></span>
 
                     </div>
 
@@ -478,8 +308,11 @@
                         type="text"
                         id="assunto"
                         placeholder="Assunto da mensagem"
+                        aria-describedby="assunto-erro"
                         required
                     >
+
+                    <span class="erro" id="assunto-erro"></span>
 
                 </div>
 
@@ -493,8 +326,11 @@
                     <textarea
                         id="mensagem"
                         placeholder="Escreva sua mensagem..."
+                        aria-describedby="mensagem-erro"
                         required
                     ></textarea>
+
+                    <span class="erro" id="mensagem-erro"></span>
 
                 </div>
 
@@ -518,7 +354,7 @@
 
                 <img
                     src="../img/logoauristicatrue.png"
-                    alt="Livraria"
+                    alt="Auristica Livraria"
                 >
 
                 <p>
@@ -527,7 +363,7 @@
 
             </div>
 
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Links do rodapé">
 
                 <a href="#catalogo">
                     Catálogo
@@ -541,7 +377,7 @@
                     Contato
                 </a>
 
-            </div>
+            </nav>
 
             <p class="copyright">
                 © 2026 Livraria
@@ -552,29 +388,9 @@
     </footer>
 
 
-    <script>
-
-        const usuario = localStorage.getItem('usuario');
-
-        const username = document.getElementById('username');
-
-        if (usuario) {
-            username.textContent = `Olá, ${usuario}`;
-        }
-
-        const formulario = document.querySelector('.contact-form');
-
-        formulario.addEventListener('submit', function(event) {
-
-            event.preventDefault();
-
-            alert('Mensagem enviada com sucesso!');
-
-            formulario.reset();
-
-        });
-
-    </script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/catalogo.js"></script>
+    <script src="../js/acessibilidade.js"></script>
 
 </body>
 

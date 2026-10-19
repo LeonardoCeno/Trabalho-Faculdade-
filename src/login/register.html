@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar conta — Livraria</title>
     <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
 </head>
 <body>
+
+    <a href="#conteudo" class="pular-conteudo">Pular para o formulário</a>
 
     <div class="login-page">
 
@@ -21,7 +24,7 @@
             </div>
         </div>
 
-        <div class="login-area">
+        <main class="login-area" id="conteudo">
 
             <div class="login-box">
 
@@ -31,7 +34,7 @@
                     <p>Preencha seus dados para começar.</p>
                 </div>
 
-                <form onsubmit="cadastrar(event)">
+                <form id="form-cadastro" novalidate>
 
                     <div class="field">
                         <label for="usuario">Nome de usuário</label>
@@ -39,28 +42,45 @@
                             type="text"
                             id="usuario"
                             placeholder="Como podemos te chamar?"
+                            autocomplete="username"
+                            aria-describedby="usuario-dica usuario-erro"
                             required
                         >
+                        <small class="dica" id="usuario-dica">Mínimo de 3 caracteres.</small>
+                        <span class="erro" id="usuario-erro" aria-live="polite"></span>
                     </div>
 
                     <div class="field">
                         <label for="senha">Senha</label>
-                        <input
-                            type="password"
-                            id="senha"
-                            placeholder="Crie uma senha"
-                            required
-                        >
+                        <div class="senha-wrapper">
+                            <input
+                                type="password"
+                                id="senha"
+                                placeholder="Crie uma senha"
+                                autocomplete="new-password"
+                                aria-describedby="senha-dica senha-erro"
+                                required
+                            >
+                            <button type="button" class="mostrar-senha" aria-controls="senha" aria-pressed="false">Mostrar</button>
+                        </div>
+                        <small class="dica" id="senha-dica">Mínimo de 6 caracteres.</small>
+                        <span class="erro" id="senha-erro" aria-live="polite"></span>
                     </div>
 
                     <div class="field">
                         <label for="confirmar">Confirmar senha</label>
-                        <input
-                            type="password"
-                            id="confirmar"
-                            placeholder="Digite a senha novamente"
-                            required
-                        >
+                        <div class="senha-wrapper">
+                            <input
+                                type="password"
+                                id="confirmar"
+                                placeholder="Digite a senha novamente"
+                                autocomplete="new-password"
+                                aria-describedby="confirmar-erro"
+                                required
+                            >
+                            <button type="button" class="mostrar-senha" aria-controls="confirmar" aria-pressed="false">Mostrar</button>
+                        </div>
+                        <span class="erro" id="confirmar-erro" aria-live="polite"></span>
                     </div>
 
                     <button type="submit">Criar conta</button>
@@ -74,28 +94,13 @@
 
             </div>
 
-        </div>
+        </main>
 
     </div>
 
-    <script>
-        function cadastrar(event) {
-            event.preventDefault();
-
-            const usuario = document.getElementById("usuario").value.trim();
-            const senha = document.getElementById("senha").value;
-            const confirmar = document.getElementById("confirmar").value;
-
-            if (senha !== confirmar) {
-                alert("As senhas não são iguais.");
-                return;
-            }
-
-            localStorage.setItem("usuario", usuario);
-
-            window.location.href = "../home/home.html";
-        }
-    </script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/acessibilidade.js"></script>
 
 </body>
 </html>

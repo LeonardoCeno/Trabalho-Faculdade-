@@ -1,0 +1,221 @@
+/* GERAL */
+
+[hidden] {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.pular-conteudo {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    z-index: 1000;
+    padding: 12px 18px;
+    background: #44375f;
+    color: #fffdf8;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.pular-conteudo:focus {
+    top: 16px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #f2b705 !important;
+    outline-offset: 3px;
+}
+
+:focus,
+[id] {
+    scroll-margin-top: 140px;
+}
+
+/* FORMULÁRIOS */
+.dica {
+    color: #6b6670;
+    font-size: 12px;
+}
+
+.erro {
+    min-height: 1em;
+    color: #b3261e;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.erro:empty {
+    display: none;
+}
+
+[aria-invalid="true"] {
+    border-color: #b3261e !important;
+}
+
+.mensagem-sucesso {
+    padding: 14px 16px;
+    border-left: 4px solid #2e7d32;
+    background: #e8f5e9;
+    color: #1b5e20;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mensagem-sucesso:empty {
+    display: none;
+}
+
+.senha-wrapper {
+    position: relative;
+}
+
+.senha-wrapper input {
+    padding-right: 90px !important;
+}
+
+.mostrar-senha {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 4px;
+    background: transparent !important;
+    color: #66539f !important;
+    font-family: inherit;
+    font-size: 12px !important;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+.mostrar-senha:hover {
+    text-decoration: underline;
+    transform: translateY(-50%) !important;
+}
+
+/* BARRA DE ACESSIBILIDADE */
+.a11y-barra {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 999;
+    display: flex;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 8px;
+    background: #352c4b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.a11y-barra button {
+    min-width: 40px;
+    height: 36px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 5px;
+    background: #fffdf8;
+    color: #352c4b;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.a11y-barra button:hover {
+    background: #a8dfe2;
+}
+
+.a11y-barra button[aria-pressed="true"] {
+    background: #a8dfe2;
+}
+
+/* ALTO CONTRASTE */
+html.alto-contraste body,
+html.alto-contraste body *:not(img) {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+html.alto-contraste body a,
+html.alto-contraste body a * {
+    color: #ff0 !important;
+    text-decoration: underline !important;
+}
+
+html.alto-contraste body .a11y-barra button[aria-pressed="true"] {
+    background: #ff0 !important;
+    color: #000 !important;
+}
+
+html.alto-contraste button,
+html.alto-contraste input,
+html.alto-contraste select,
+html.alto-contraste textarea {
+    border: 2px solid #fff !important;
+}
+
+html.alto-contraste input::placeholder,
+html.alto-contraste textarea::placeholder {
+    color: #ccc !important;
+}
+
+html.alto-contraste .hero-overlay,
+html.alto-contraste .about-image::after,
+html.alto-contraste .login-visual::before,
+html.alto-contraste .login-visual::after {
+    display: none;
+}
+
+html.alto-contraste .erro {
+    color: #ff6b6b !important;
+}
+
+/* MENOS ANIMAÇÕES */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .a11y-barra {
+        right: 8px;
+        bottom: 8px;
+    }
+
+    .a11y-barra button {
+        min-width: 36px;
+        padding: 0 8px;
+    }
+}

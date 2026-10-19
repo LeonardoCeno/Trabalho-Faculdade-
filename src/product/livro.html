@@ -5,25 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sousou no Frieren | Livraria</title>
+    <title>Livro | Livraria</title>
 
     <link rel="stylesheet" href="./livro.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
 </head>
 
 <body>
+
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
 
     <header class="header">
 
         <div class="header-content">
 
-            <img
-                class="logo"
-                src="../img/logoauristicatrue.png"
-                alt="Livraria"
-                onclick="window.location.href='../home/home.html'"
-            >
+            <a href="../home/home.html">
+                <img
+                    class="logo"
+                    src="../img/logoauristicatrue.png"
+                    alt="Auristica Livraria — página inicial"
+                >
+            </a>
 
-            <nav class="navigation">
+            <nav class="navigation" aria-label="Navegação principal">
 
                 <a href="../home/home.html">
                     Início
@@ -33,16 +37,21 @@
                     Catálogo
                 </a>
 
+                <a href="novo-livro.html">
+                    Cadastrar livro
+                </a>
+
             </nav>
 
-            <div class="search">
-
+            <form class="search" role="search" action="../home/home.html">
+                <label for="busca" class="sr-only">Pesquisar livros</label>
                 <input
-                    type="text"
+                    type="search"
+                    id="busca"
+                    name="busca"
                     placeholder="Pesquisar livros..."
                 >
-
-            </div>
+            </form>
 
             <div class="user-area">
 
@@ -50,14 +59,18 @@
 
                     <img
                         src="../img/Userbeta.png"
-                        alt="Usuário"
+                        alt=""
                     >
 
                 </div>
 
                 <span id="username">
-                    Olá, usuário
+                    Olá, visitante
                 </span>
+
+                <button type="button" id="sair" class="logout" hidden>
+                    Sair
+                </button>
 
             </div>
 
@@ -66,79 +79,62 @@
     </header>
 
 
-    <main>
+    <main id="conteudo">
 
-        <div class="breadcrumb">
+        <nav class="breadcrumb" aria-label="Você está em">
 
             <a href="../home/home.html">
                 Início
             </a>
 
-            <span>/</span>
+            <span aria-hidden="true">/</span>
 
-            <span>Livro</span>
+            <span aria-current="page" id="breadcrumb-titulo">Livro</span>
 
-        </div>
+        </nav>
 
 
-        <section class="product">
+        <section class="product" id="produto" aria-labelledby="livro-titulo">
 
             <div class="product-image">
 
-                <div class="image-background">
-
-                    <img
-                        src="../img/capa.jpeg"
-                        alt="Capa de Sousou no Frieren"
-                    >
-
-                </div>
+                <div class="image-background" id="livro-capa"></div>
 
             </div>
 
 
             <div class="product-info">
 
-                <span class="category">
-                    FANTASIA
-                </span>
+                <span class="category" id="livro-categoria"></span>
 
-                <h1>
-                    Sousou no Frieren
+                <h1 id="livro-titulo">
+                    Carregando...
                 </h1>
 
-                <p class="author">
-                    Kanehito Yamada
-                </p>
+                <p class="author" id="livro-autor"></p>
 
-                <div class="line"></div>
+                <div class="line" aria-hidden="true"></div>
 
-                <p class="description">
-                    Uma história sobre o que permanece depois
-                    que uma grande aventura chega ao fim. Frieren,
-                    uma elfa maga que possui uma vida muito longa,
-                    começa a compreender melhor as pessoas e os
-                    momentos que compartilhou durante sua jornada.
-                </p>
+                <p class="description" id="livro-descricao"></p>
 
-                <div class="details">
+                <dl class="details">
 
                     <div>
-                        <span>FORMATO</span>
-                        <strong>Físico</strong>
+                        <dt>FORMATO</dt>
+                        <dd id="livro-formato"></dd>
                     </div>
 
                     <div>
-                        <span>IDIOMA</span>
-                        <strong>Português</strong>
+                        <dt>IDIOMA</dt>
+                        <dd id="livro-idioma"></dd>
                     </div>
 
                     <div>
-                        <span>EDIÇÃO</span>
-                        <strong>1ª edição</strong>
+                        <dt>EDIÇÃO</dt>
+                        <dd id="livro-edicao"></dd>
                     </div>
 
-                </div>
+                </dl>
 
                 <div class="purchase">
 
@@ -148,19 +144,32 @@
                             POR APENAS
                         </span>
 
-                        <strong>
-                            R$ 45,90
-                        </strong>
+                        <strong id="livro-preco"></strong>
 
                     </div>
 
-                    <button>
+                    <button type="button" id="adicionar-carrinho">
                         Adicionar ao carrinho
                     </button>
 
                 </div>
 
+                <p class="mensagem-sucesso" id="carrinho-status" role="status"></p>
+
             </div>
+
+        </section>
+
+
+        <section class="not-found" id="nao-encontrado" hidden>
+
+            <h1>Livro não encontrado.</h1>
+
+            <p>
+                Esse livro não existe ou foi removido.
+            </p>
+
+            <a href="../home/home.html#catalogo">Voltar ao catálogo</a>
 
         </section>
 
@@ -171,7 +180,7 @@
 
         <img
             src="../img/logoauristicatrue.png"
-            alt="Livraria"
+            alt="Auristica Livraria"
         >
 
         <p>
@@ -181,14 +190,9 @@
     </footer>
 
 
-    <script>
-        const usuario = localStorage.getItem('usuario');
-
-        if (usuario) {
-            document.getElementById('username').textContent =
-                `Olá, ${usuario}`;
-        }
-    </script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/livro.js"></script>
+    <script src="../js/acessibilidade.js"></script>
 
 </body>
 

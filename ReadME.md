@@ -1,6 +1,6 @@
 # Livraria
 
-Projeto desenvolvido para a disciplina de desenvolvimento web, utilizando HTML e CSS.
+Projeto desenvolvido para a disciplina de desenvolvimento web, utilizando HTML, CSS e JavaScript.
 
 ## Autores
 
@@ -23,13 +23,14 @@ O projeto também possui uma área institucional com informações sobre a livra
 
 ## Funcionalidades
 
-- Página de login
-- Página de cadastro
-- Identificação do usuário após o login
+- Página de login (valida usuário e senha cadastrados)
+- Página de cadastro de usuário (com validação dos campos)
+- Identificação do usuário após o login e botão de sair
 - Página inicial da livraria
-- Catálogo de livros
-- Página individual de livro
-- Campo de pesquisa
+- Catálogo de livros gerado por JavaScript
+- Formulário de cadastro de novos livros (com capa opcional)
+- Página individual de livro (`livro.html?id=...`)
+- Campo de pesquisa funcional (título, autor ou categoria)
 - Seção sobre a livraria
 - Formulário de contato
 - Navegação entre as páginas
@@ -39,6 +40,22 @@ O projeto também possui uma área institucional com informações sobre a livra
 
 - HTML5
 - CSS3
+- JavaScript (sem bibliotecas)
+- `localStorage` para guardar usuários, livros e preferências
+
+> Como o projeto não tem servidor, os dados ficam salvos apenas no navegador.
+> As senhas são guardadas sem criptografia, o que é aceitável só para fins de estudo.
+
+## Acessibilidade
+
+- Barra de acessibilidade em todas as páginas: aumentar/diminuir texto e alto contraste (preferências salvas)
+- Link "Pular para o conteúdo" para quem navega pelo teclado
+- Foco visível em links, botões e campos
+- Cards de livros como links, acessíveis pelo teclado
+- Mensagens de erro ligadas aos campos (`aria-describedby`, `aria-invalid`, `aria-live`) em vez de `alert`
+- Botão de mostrar/ocultar senha
+- `aria-label` nas navegações, `aria-current` na página atual e texto alternativo nas imagens
+- Respeita a preferência do sistema por menos animações (`prefers-reduced-motion`)
 
 ## Conceitos aplicados
 
@@ -56,24 +73,24 @@ Durante o desenvolvimento foram utilizados conceitos fundamentais de desenvolvim
 - Pseudo-classes
 - Responsividade
 - Organização de páginas e arquivos
+- Manipulação do DOM e eventos em JavaScript
+- Validação de formulários
+- Acessibilidade (WAI-ARIA)
 
 ## Estrutura do projeto
 
 ```text
 LIVRARIA/
 │
-├── index.html
+├── index.html              (login)
 ├── README.md
 │
 └── src/
     │
     ├── login/
-    │   ├── login.html
-    │   └── login.css
-    │
-    ├── cadastro/
-    │   ├── cadastro.html
-    │   └── cadastro.css
+    │   ├── login.css
+    │   ├── register.html
+    │   └── register.css
     │
     ├── home/
     │   ├── home.html
@@ -81,7 +98,19 @@ LIVRARIA/
     │
     ├── product/
     │   ├── livro.html
-    │   └── livro.css
+    │   ├── livro.css
+    │   └── novo-livro.html     (cadastro de livros)
+    │
+    ├── css/
+    │   └── acessibilidade.css
+    │
+    ├── js/
+    │   ├── storage.js          (funções de dados compartilhadas)
+    │   ├── login.js            (login e cadastro de usuário)
+    │   ├── catalogo.js         (catálogo, pesquisa e contato)
+    │   ├── livro.js            (página do livro)
+    │   ├── cadastro-livro.js   (formulário de novos livros)
+    │   └── acessibilidade.js   (barra de acessibilidade)
     │
     └── img/
         ├── logoauristicatrue.png
