@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../home/style.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
+
+    <title>Carrinho — Livraria</title>
+</head>
+
+<body>
+
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <header class="header">
+
+        <a href="../home/home.html" class="logo-link">
+            <img
+                class="logo"
+                src="../img/logoauristicatrue.png"
+                alt="Auristica Livraria — página inicial"
+            >
+        </a>
+
+        <nav class="navigation" aria-label="Navegação principal">
+
+            <a href="../home/home.html">
+                Início
+            </a>
+
+            <a href="../home/home.html#catalogo">
+                Catálogo
+            </a>
+
+            <a href="novo-livro.html">
+                Cadastrar livro
+            </a>
+
+        </nav>
+
+        <form class="search" role="search" action="../home/home.html">
+            <label for="busca" class="sr-only">Pesquisar livros</label>
+            <input
+                type="search"
+                id="busca"
+                name="busca"
+                placeholder="Pesquisar livros..."
+            >
+        </form>
+
+        <a href="carrinho.html" class="cart-link active" aria-current="page">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="20" r="1.5"></circle>
+                <circle cx="18" cy="20" r="1.5"></circle>
+                <path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.5L22 7H6"></path>
+            </svg>
+            <span class="sr-only">Carrinho com</span>
+            <span class="cart-count" id="carrinho-contador">0</span>
+            <span class="sr-only">item(ns)</span>
+        </a>
+
+        <div class="user">
+
+            <img
+                src="../img/Userbeta.png"
+                alt=""
+            >
+
+            <span id="username">
+                Olá, visitante
+            </span>
+
+            <button type="button" id="sair" class="logout" hidden>
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main id="conteudo" class="new-book cart">
+
+        <div class="new-book-heading">
+
+            <span class="eyebrow">
+                CARRINHO
+            </span>
+
+            <h1>
+                Seu carrinho.
+            </h1>
+
+            <p>
+                Os livros ficam salvos neste navegador até você finalizar a compra ou removê-los.
+            </p>
+
+        </div>
+
+
+        <p class="mensagem-sucesso" id="carrinho-status" role="status" tabindex="-1"></p>
+
+        <p class="erro" id="carrinho-erro" role="alert"></p>
+
+
+        <div class="cart-empty" id="carrinho-vazio" hidden>
+            <p>
+                Seu carrinho está vazio.
+            </p>
+            <a href="../home/home.html#catalogo" class="hero-button">Ver catálogo</a>
+        </div>
+
+
+        <section id="carrinho-conteudo" aria-label="Itens do carrinho" hidden>
+
+            <ul class="cart-list" id="carrinho-lista"></ul>
+
+            <div class="cart-summary">
+
+                <p>
+                    Total
+                    <strong id="carrinho-total"></strong>
+                </p>
+
+                <button type="button" id="limpar-carrinho" class="cart-secondary">
+                    Esvaziar carrinho
+                </button>
+
+                <button type="button" id="finalizar-compra">
+                    Finalizar compra
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <img
+                    src="../img/logoauristicatrue.png"
+                    alt="Auristica Livraria"
+                >
+
+                <p>
+                    Histórias para todos os capítulos.
+                </p>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Livraria
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+
+</body>
+
+</html>

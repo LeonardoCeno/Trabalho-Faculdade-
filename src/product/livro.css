@@ -132,13 +132,57 @@ body {
     color: #aaa59e;
 }
 
+.cart-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    margin-left: 25px;
+    padding: 6px;
+
+    color: var(--purple-dark);
+
+    transition: 0.2s ease;
+}
+
+.cart-link:hover {
+    color: var(--purple);
+}
+
+.cart-count {
+    position: absolute;
+
+    top: -2px;
+    right: -6px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: var(--purple);
+
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
 .user-area {
     display: flex;
     align-items: center;
 
     gap: 10px;
 
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .user {
@@ -491,6 +535,12 @@ main {
     margin-top: 20px;
 }
 
+.product-info .mensagem-sucesso a {
+    margin-left: 4px;
+
+    color: inherit;
+}
+
 
 /* LIVRO NÃO ENCONTRADO */
 
@@ -588,8 +638,12 @@ main {
         width: 125px;
     }
 
-    .user-area {
+    .cart-link {
         margin-left: auto;
+    }
+
+    .user-area {
+        margin-left: 15px;
     }
 
     .user-area span {

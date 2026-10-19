@@ -1,4 +1,5 @@
 mostrarUsuario('../../index.html');
+atualizarContadorCarrinho();
 
 const formLivro = document.getElementById('form-livro');
 const avisoLogin = document.getElementById('aviso-login');

@@ -61,6 +61,61 @@ function salvarLivro(livro) {
     localStorage.setItem('livros', JSON.stringify(livros));
 }
 
+// Carrinho
+// Cada item guarda só o id do livro e a quantidade. Os dados do livro são buscados com getLivro.
+
+function getCarrinho() {
+    return lerLista('carrinho');
+}
+
+function salvarCarrinho(itens) {
+    localStorage.setItem('carrinho', JSON.stringify(itens));
+    atualizarContadorCarrinho();
+}
+
+function adicionarAoCarrinho(id) {
+    const itens = getCarrinho();
+    let item = itens.find(i => i.id === id);
+
+    if (item) {
+        item.quantidade++;
+    } else {
+        item = { id, quantidade: 1 };
+        itens.push(item);
+    }
+
+    salvarCarrinho(itens);
+    return item.quantidade;
+}
+
+function mudarQuantidade(id, quantidade) {
+    const itens = getCarrinho()
+        .map(i => i.id === id ? { id, quantidade } : i)
+        .filter(i => i.quantidade > 0);
+
+    salvarCarrinho(itens);
+}
+
+function removerDoCarrinho(id) {
+    mudarQuantidade(id, 0);
+}
+
+function limparCarrinho() {
+    salvarCarrinho([]);
+}
+
+function contarItensCarrinho() {
+    return getCarrinho().reduce((total, item) => total + item.quantidade, 0);
+}
+
+function atualizarContadorCarrinho() {
+    const contador = document.getElementById('carrinho-contador');
+
+    if (contador) {
+        contador.textContent = contarItensCarrinho();
+    }
+}
+
 // Funções auxiliares
 
 function formatarPreco(valor) {

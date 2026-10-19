@@ -1,4 +1,5 @@
 mostrarUsuario('../../index.html');
+atualizarContadorCarrinho();
 
 const parametros = new URLSearchParams(window.location.search);
 
@@ -38,7 +39,11 @@ if (!livro) {
     }
 
     document.getElementById('adicionar-carrinho').addEventListener('click', function () {
-        document.getElementById('carrinho-status').textContent =
-            `"${livro.titulo}" foi adicionado ao carrinho.`;
+        const quantidade = adicionarAoCarrinho(livro.id);
+
+        document.getElementById('carrinho-status').innerHTML = `
+            "${escaparHTML(livro.titulo)}" foi adicionado ao carrinho (${quantidade} no carrinho).
+            <a href="carrinho.html">Ver carrinho</a>
+        `;
     });
 }

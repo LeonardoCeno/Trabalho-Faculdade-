@@ -1,4 +1,5 @@
 mostrarUsuario('../../index.html');
+atualizarContadorCarrinho();
 
 // Catálogo de livros
 const listaLivros = document.getElementById('lista-livros');
